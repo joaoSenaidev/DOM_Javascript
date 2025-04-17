@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de DOM</title>
+</head>
+<body>
+<header>
+    <h1>Exercicio 1</h1>
+</header>
+<main>
+    <h2>Tarafas</h2>
+     <input id= "tarefa" type="text" name = "" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Cadastrar</button>
+
+    <ul id="lista_De_Tarefas"></ul>
+
+    <a href="https://github.com/joaoSenaidev/Exercicio_Javascript">Link do mais bonito da sala</a>
+</main>
+
+    <footer>
+        <h3>Quero completar a atividade</h3>
+    </footer>
+</body>
+<script>
+    function adicionarTarefa(){
+
+    //cadastrar um item na lista
+        //1 - preciso ter o valor escrito pelo meu usuario
+    let valorInput = document.getElementById("tarefa").value;
+    //console.log(valorInput);
+        //2-criar a tarefa na lista
+    let itemLista = document.createElement("li");
+    itemLista.innerText = valorInput;
+
+    //estarei cadastrando um novo item ABAIXo do anterior
+   document.getElementById("lista_De_Tarefas").appendChild(itemLista);
+
+   //botao de excluir
+   let BotaoExcluir = document.createElement("button");
+   BotaoExcluir.innerText = "Deletar item";
+   
+   itemLista.appendChild(BotaoExcluir);
+   // Assim que eu clicar no botao de excluir, ele ira sair junto com o item
+//    BotaoExcluir.onclick = function(){
+//        itemLista.remove();
+//}
+    BotaoExcluir.onclick = () =>{
+       itemLista.remove();
+    }
+    
+
+   document.getElementById("tarefa").value = "";
+
+}
+</script>
+</html>

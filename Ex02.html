@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    padding: 25px;
+     background-color: white;
+    color: black;
+    font-size: 25px;
+    }
+
+    .dark-mode {
+     background-color: black;
+     color: white;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modo Claro/Escuro</h1>
+        <button onclick="mudarTema()">Trocar Tema</button>
+    </header>
+    <main>
+        <h2 id="texto1">Camisetas</h2>
+        <p>Camiseta Preta - R$50 <button class="grupo"  onclick="adicionar()">adicionar</button></p>
+        <p>Camiseta Branca - R$40 <button class="grupo" onclick="adicionar()">adicionar</button></p>
+
+        <h2>Carrinho:</h2>
+        <ul id="Carrinho">
+            <li>
+                <p>Total: R$0.00</p>
+            </li>
+        </ul>
+
+        
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+function mudarTema() {
+  let element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
+// let TrocarTema
+//         function MTema(){
+//             if( document.body.style.background === "black"){
+//                 document.body.style.background = "white"
+//                 document.body.style = "black"
+//             }else{
+//                 document.body.style.background = "black"
+//                 document.body.style = "white"
+//             }
+// }
+
+function adicionar(){
+       let valorInput = document.getElementById("Carrinho").value;
+       console.log(valorInput);
+       let itemCarrinho = document.createElement("li");
+            itemCarrinho.innerText = valorInput
+        //2- criar a tarefa na Carrinho
+        if (valorInput === ""){
+            alert("Meu fí quer bolacha, insira certo o item");
+        } else if (valorInput === " ")
+        {
+            alert("Meu fí quer bolacha, insira certo o item");
+        } 
+        else {
+            document.getElementById("Carrinho").appendChild(itemCarrinho)
+        }
+
+        let botaoExcluir = document.createElement("button");
+        botaoExcluir.innerText = "Remover Item";
+        itemCarrinho.appendChild(botaoExcluir);
+
+        
+        botaoExcluir.onclick = function(){
+            itemCarrinho.remove();
+    }
+ }
+
+</script>
+</html>
