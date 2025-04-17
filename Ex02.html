@@ -58,31 +58,5 @@ function mudarTema() {
 //             }
 // }
 
-function adicionar(){
-       let valorInput = document.getElementById("Carrinho").value;
-       console.log(valorInput);
-       let itemCarrinho = document.createElement("li");
-            itemCarrinho.innerText = valorInput
-        //2- criar a tarefa na Carrinho
-        if (valorInput === ""){
-            alert("Meu fí quer bolacha, insira certo o item");
-        } else if (valorInput === " ")
-        {
-            alert("Meu fí quer bolacha, insira certo o item");
-        } 
-        else {
-            document.getElementById("Carrinho").appendChild(itemCarrinho)
-        }
-
-        let botaoExcluir = document.createElement("button");
-        botaoExcluir.innerText = "Remover Item";
-        itemCarrinho.appendChild(botaoExcluir);
-
-        
-        botaoExcluir.onclick = function(){
-            itemCarrinho.remove();
-    }
- }
-
 </script>
 </html>
